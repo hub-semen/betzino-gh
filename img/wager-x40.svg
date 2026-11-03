@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" font-family="Inter, Arial, sans-serif">
+  <rect width="760" height="250" rx="14" fill="#f6f5f1"/>
+  <text x="28" y="40" font-size="16" font-weight="700" fill="#18181d">Exigence de mise x40 : exemple avec un bonus fictif de 100 €</text>
+  <!-- bonus box -->
+  <rect x="28" y="66" width="150" height="110" rx="12" fill="#18181d"/>
+  <text x="103" y="106" text-anchor="middle" font-size="13" fill="#b9b9c2">Bonus reçu</text>
+  <text x="103" y="146" text-anchor="middle" font-size="30" font-weight="800" fill="#f5c518">100 €</text>
+  <text x="214" y="132" text-anchor="middle" font-size="30" font-weight="800" fill="#18181d">×</text>
+  <rect x="250" y="66" width="110" height="110" rx="12" fill="#18181d"/>
+  <text x="305" y="106" text-anchor="middle" font-size="13" fill="#b9b9c2">Mise requise</text>
+  <text x="305" y="146" text-anchor="middle" font-size="30" font-weight="800" fill="#f5c518">40</text>
+  <text x="396" y="132" text-anchor="middle" font-size="30" font-weight="800" fill="#18181d">=</text>
+  <rect x="432" y="66" width="300" height="110" rx="12" fill="#f5c518"/>
+  <text x="582" y="106" text-anchor="middle" font-size="13" fill="#3a3000">Total à miser avant retrait</text>
+  <text x="582" y="146" text-anchor="middle" font-size="30" font-weight="800" fill="#18181d">4 000 €</text>
+  <!-- contribution bars -->
+  <text x="28" y="208" font-size="13" fill="#5f5f68">Machines à sous : souvent 100 % de contribution</text>
+  <rect x="28" y="218" width="320" height="10" rx="5" fill="#dcae0a"/>
+  <text x="412" y="208" font-size="13" fill="#5f5f68">Table / live : souvent bien moins, voire 0 %</text>
+  <rect x="412" y="218" width="320" height="10" rx="5" fill="#e4e2da"/>
+  <rect x="412" y="218" width="48" height="10" rx="5" fill="#dcae0a"/>
+</svg>

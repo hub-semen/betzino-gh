@@ -1,0 +1,8 @@
+.DS_Store
+
+# oh-my-claudecode
+.omc/
+.omx/
+.claude/
+CLAUDE.md
+AGENTS.md
