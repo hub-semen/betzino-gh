@@ -1,7 +1,6 @@
 // Partner links (also hardcoded in index.html for no-JS). Every element with data-cta="<key>" gets this href.
-// Same link as the OrbitX site (utm_source still says orbitx-bet-fr).
 const CTA_LINKS = {
-  vodds: 'https://vodds.com/?utm_source=orbitx-bet-fr',
+  alternatives: 'https://vodds.com/bookmakers/?utm_source=betzino-fr',
 };
 
 document.querySelectorAll('[data-cta]').forEach((el) => {
@@ -11,6 +10,22 @@ document.querySelectorAll('[data-cta]').forEach((el) => {
   el.target = '_blank';
   el.rel = 'nofollow sponsored noopener';
 });
+
+// "Visit BetZino" buttons open the "offer unavailable" pop-up; its button leads to the alternatives.
+// Without <dialog> support (or JS) the link goes straight to the alternatives page.
+const modal = document.getElementById('offer-modal');
+if (modal && typeof modal.showModal === 'function') {
+  document.querySelectorAll('[data-offer]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.showModal();
+    });
+  });
+  modal.addEventListener('click', (e) => {
+    // Close on the × button or a click on the backdrop
+    if (e.target.closest('[data-close]') || e.target === modal) modal.close();
+  });
+}
 
 const canObserve = 'IntersectionObserver' in window;
 
