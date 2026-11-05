@@ -22,7 +22,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + var(--subnav-h) + 16px); }
+html { overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + var(--subnav-h) + 16px); }
 body {
   margin: 0;
   font: 16px/1.65 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -30,6 +30,7 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--link); }
@@ -171,8 +172,7 @@ figcaption { margin-top: 10px; font-size: 13px; color: var(--muted); }
 .timeline li::before { content: ""; position: absolute; left: 0; top: 5px; width: 16px; height: 16px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 4px var(--brand-soft); }
 
 /* id card */
-.id-card { position: sticky; top: calc(var(--header-h) + var(--subnav-h) + 24px); background: var(--night); color: #e6e6ea; border-radius: var(--radius); padding: 26px; box-shadow: 0 30px 60px rgba(24,24,29,.25); overflow: hidden; }
-.id-card::after { content: ""; position: absolute; right: -60px; top: -60px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(245,197,24,.35), transparent 70%); }
+.id-card { position: sticky; top: calc(var(--header-h) + var(--subnav-h) + 24px); background: radial-gradient(160px 160px at 100% 0%, rgba(245,197,24,.3), transparent 70%), var(--night); color: #e6e6ea; border-radius: var(--radius); padding: 26px; box-shadow: 0 30px 60px rgba(24,24,29,.25); overflow: hidden; }
 .id-head { display: flex; align-items: center; gap: 14px; padding-bottom: 18px; margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,.15); }
 .id-head strong { display: block; font-size: 18px; color: #fff; }
 .id-head span { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--brand); }
@@ -283,7 +283,7 @@ ul.cross li::before { content: "✕"; background: var(--bad-soft); color: var(--
 .panel-alert h2 { color: #fff; }
 .panel-alert .kicker { color: #ff8ea1; }
 .panel-lead { font-size: 18px; font-weight: 600; color: #fff; }
-.watermark { position: absolute; right: -10px; bottom: -40px; font-size: 180px; font-weight: 900; letter-spacing: -.06em; color: rgba(255,255,255,.04); line-height: 1; pointer-events: none; }
+.watermark { position: absolute; right: 12px; bottom: -28px; font-size: 180px; font-weight: 900; letter-spacing: -.06em; color: rgba(255,255,255,.04); line-height: 1; pointer-events: none; }
 .helpline { display: block; margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--brand-soft); font-size: 14.5px; }
 
 /* verdict */
@@ -396,6 +396,7 @@ ul.cross li::before { content: "✕"; background: var(--bad-soft); color: var(--
 .modal-badge { display: inline-block; margin: 0 0 12px !important; padding: 5px 12px; border-radius: 999px; background: var(--bad-soft); color: var(--bad); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .modal-close { position: absolute; right: 14px; top: 12px; width: 34px; height: 34px; border: 0; border-radius: 50%; background: rgba(255,255,255,.08); color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
 .modal-close:hover { background: rgba(255,255,255,.16); }
-.modal-note { margin: 18px 0 0 !important; font-size: 12.5px; color: #9a9aa3; display: flex; align-items: center; justify-content: center; }
-.modal-note .badge-18 { width: 24px; height: 24px; font-size: 10px; }
+.modal-note { margin: 20px 0 0 !important; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.08); font-size: 12.5px; line-height: 1.45; color: #9a9aa3; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: left; }
+.modal-note .badge-18 { width: 30px; height: 30px; font-size: 11px; margin: 0; color: #fff; }
 @keyframes pop { from { opacity: 0; transform: translateY(12px) scale(.97); } to { opacity: 1; transform: none; } }
+.modal-close:focus:not(:focus-visible) { outline: none; }
